@@ -1,8 +1,8 @@
 <script>
 
-import InfoCards from "../components/articles/infocards.vue";
+import InfoCards from "./../components/articles/InfoCards.vue";
 export default {
-  name: "HomeArticles",
+  name: "infoCards",
   components: {
     InfoCards,
   },
