@@ -4,7 +4,7 @@ import App from './App.vue';
 import router from './router';
 import LabelValues from './components/commons/LabelValues.vue';
 import toast from './plugins/toast';
-import i18n from './i18n/i18n.js';
+import i18n from './I18n/i18n.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './assets/styles.css';
 import axios from './plugins/axios';
