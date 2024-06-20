@@ -1,0 +1,738 @@
+/******COMMUN ********/
+
+#app {
+    width: 100vw;
+    height: 100%;
+    margin: 0 auto;
+    font-weight: normal;
+
+}
+
+.logout {
+    margin-left: 20px;
+}
+
+.bi-box-arrow-right {
+    font-size: 20px;
+}
+
+button[type="submit"] {
+    background: rgb(0, 119, 255);
+    border: 20px;
+    padding: 10px 10px;
+    color: #fff;
+    transition: 0.4s;
+    text-align: center;
+}
+
+button[type="submit"]:hover {
+    background: #78cbec;
+}
+
+.form-control:focus {
+    border: 3px solid grey;
+    border-color: grey;
+    box-shadow: 0px 0px 1px 1px grey;
+}
+
+input {
+    background-color: grey;
+}
+
+form {
+    padding: 30px;
+}
+
+.form-control {
+    background-color: whitesmoke
+}
+
+p,
+.text {
+    font-family: 'Raleway', sans-serif !important;
+
+}
+
+.bi {
+    color: rgb(0, 119, 255) ! important;
+}
+
+.white-envelope,
+.bi-send {
+    color: #eee !important;
+}
+
+/******FORM *****/
+
+label {
+    font-weight: 600;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
+}
+
+form {
+    padding: 30px;
+}
+
+.form-control {
+    background-color: whitesmoke
+}
+
+.form-control:focus {
+    border: 3px solid grey;
+    border-color: grey;
+    box-shadow: 0px 0px 1px 1px grey;
+}
+
+input {
+    background-color: grey;
+}
+
+p,
+.text {
+    font-family: 'Raleway', sans-serif !important;
+
+}
+
+/**********INFO-CARDS*******/
+
+.link {
+    margin-left: 20%;
+}
+
+.link-title:hover {
+    text-decoration: underline;
+    color: #6a8478;
+}
+
+.divid {
+    background: grey;
+    height: 3px;
+    margin: 25px auto;
+    width: 80px;
+}
+
+.card-text {
+
+    font-family: 'Raleway', sans-serif !important;
+    text-align: justify !important;
+}
+
+.card-editor {
+    display: flex;
+    align-content: flex-end;
+    justify-content: space-evenly;
+}
+
+/* .card-img-top:hover {
+    box-shadow: 10px 5px 5px white;
+}
+
+.cardo:hover {
+    box-shadow: 10px 5px 5px #887766;
+} */
+
+@media only screen and (max-width: 880px) {
+    .cards {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+
+    }
+}
+
+/**********EDIT*************/
+img {
+    padding: 5px;
+    width: 150px;
+}
+
+thead {
+    border: 1px solid #185999;
+    background: #f2f2f2;
+}
+
+tbody {
+    border: 1px solid #185999;
+}
+
+
+.bi-trash3 {
+    color: red !important;
+}
+
+
+p,
+.text {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 19px !important;
+}
+
+.page-link {
+    color: #185999 !important;
+}
+
+/********* Navbar **********/
+
+.navbar a {
+    font-size: 18px;
+    margin-right: 25px;
+}
+
+
+.navbar-brand {
+    font-size: 30px !important;
+
+}
+
+.navbar-brand-md .navbar-collapse {
+    letter-spacing: 1pt;
+    display: flex;
+    flex-direction: row-reverse !important;
+}
+
+.navbar-brand:hover {
+    transform: rotate(-2deg);
+}
+
+.nav-link {
+    display: flex;
+    /* Utilisez Flexbox pour aligner les éléments en ligne */
+    align-items: center;
+    /* Centrez verticalement les éléments */
+}
+
+.nav-link i {
+    margin-right: 8px;
+    /* Ajoutez un espace entre l'icône et le texte */
+}
+
+/*********SIGN-IN*************/
+
+.section-title {
+    text-align: center;
+}
+
+
+.section-title,
+.section-sub-title {
+    margin-bottom: 30px;
+}
+
+fieldset {
+    padding: 0 1em 1em;
+    border: 1pt solid;
+    border-radius: 4px;
+    margin: 0 auto 0.5em;
+    background: #ffffff;
+}
+
+legend {
+    float: none;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+.presentation {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.welcome {
+    margin-bottom: 0.25em;
+    font-weight: bold;
+    font-size: 2.25em;
+    color: rgb(0, 119, 255);
+}
+
+.description {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.p {
+    font-size: 1em;
+}
+
+
+
+/**************SIGN-UP**************/
+
+fieldset {
+    padding: 0 1em 1em;
+    border: 1pt solid;
+    border-radius: 4px;
+    margin: 0 auto 0.5em;
+    background: white;
+}
+
+legend {
+    float: none;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+}
+
+.presentation {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.welcome {
+    margin-bottom: 0.25em;
+    font-weight: bold;
+    font-size: 2.25em;
+    color: rgb(0, 119, 255);
+}
+
+.description {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.p {
+    font-size: 1em;
+}
+
+
+/*************ACTUALITE*************/
+
+
+@media only screen and (max-width: 880px) {
+    .cards {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+
+    }
+}
+
+/*************CONTACT*************/
+
+.h2 {
+    justify-content: center;
+}
+
+.contact .info-box {
+    color: #313030;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 15px;
+}
+
+.contact .info-box i {
+    font-size: 32px;
+    margin-right: 15px;
+    color: blue;
+    border-radius: 50%;
+    padding: 15px;
+    border: 2px dotted rgba(214, 215, 216, 0.6);
+    float: left;
+}
+
+.rich-text {
+    text-align: center !important;
+    overflow-wrap: break-word;
+}
+
+.contact .info-box h3 {
+    font-size: 20px;
+    color: #656262;
+    font-weight: 700;
+    margin: 10px 0 10px 68px;
+}
+
+.bi {
+    color: #313030
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 12px;
+    margin: 0 0 0 68px;
+}
+
+p {
+    font-size: 12px;
+}
+
+.contact .email-form {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 30px;
+}
+
+.contact .email-form .error-message {
+    display: none;
+    color: #fff;
+    background: rgb(0, 119, 255);
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.contact .email-form .error-message br+br {
+    margin-top: 25px;
+}
+
+.contact .email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: rgb(0, 119, 255);
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.contact-police {
+    font-size: 20px;
+
+}
+
+.contact .email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.contact .email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 9px solid rgb(0, 119, 255);
+    border-top-color: #eee;
+    animation: animate-loading 1s linear infinite;
+}
+
+.contact .email-form input,
+.contact .email-form textarea {
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.contact .email-form input:focus,
+.contact .email-form textarea:focus {
+    border-color: rgb(0, 119, 255);
+}
+
+.contact .email-form input {
+    padding: 10px 15px;
+}
+
+.contact .email-form textarea {
+    padding: 12px 15px;
+}
+
+.contact .email-form button[type="submit"] {
+    background: rgb(0, 119, 255);
+    border: 20px;
+    padding: 10px 10px;
+    color: #fff;
+    transition: 0.4s;
+}
+
+.white-envelope .alarm {
+    color: white !important;
+}
+
+
+/************DETAILS*********/
+
+#sidebar {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+}
+
+.lien {
+    font-size: x-large;
+}
+
+/* 
+#lol {
+    margin-left: 20%;
+} */
+
+body {
+    background: #eee;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+
+ul {
+    text-decoration: none;
+
+}
+
+.divide {
+    background: grey;
+    height: 5px;
+    margin: 10px auto;
+    width: 80px;
+}
+
+.divide2 {
+    border-left: thick solid #000;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    background: grey;
+    height: 15%;
+    display: inline-flex;
+    flex-wrap: wrap;
+
+}
+
+
+.date__day {
+    font-size: 22px;
+}
+
+.card-tag {
+    padding: 0.2rem 0.5rem;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #505f79;
+    color: #fff;
+}
+
+.editor-info {
+    display: flex;
+    display: inline;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.editor-date {
+    margin-left: 70px;
+    width: 60%;
+
+}
+
+.editor {
+    text-transform: uppercase;
+
+}
+
+.bi-calendar {
+    margin-left: 10%;
+}
+
+.blog-card-style {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    padding: 30px;
+    position: relative;
+
+}
+
+p,
+.text {
+    font-family: 'Raleway', sans-serif !important;
+    /* text-align: justify !important; */
+
+}
+
+.blog-card__background,
+.card__background--layer {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-card__background {
+    padding: 15px;
+    background: white;
+}
+
+.card__background--wrapper {
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+.card__background--main {
+    height: 100%;
+    position: relative;
+    transition: 300ms ease-in-out;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog-card__head {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-card__info {
+    z-index: 10;
+    background: white;
+    padding: 20px 15px;
+}
+
+
+.card__background--main {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.card__background--layer {
+    opacity: 1;
+}
+
+/*****NEW FRONT  */
+
+.link {
+    font-size: large;
+    margin-left: 5%;
+    color: black;
+    text-decoration: none;
+}
+
+header.masthead {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    color: #fff;
+    background-image: url("../../../public/images/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+header.masthead .masthead-subheading {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    margin-bottom: 25px;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header.masthead .masthead-heading {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (min-width: 768px) {
+    header.masthead {
+        padding-top: 17rem;
+        padding-bottom: 12.5rem;
+    }
+
+    header.masthead .masthead-subheading {
+        font-size: 2.25rem;
+        font-style: italic;
+        line-height: 2.25rem;
+        margin-bottom: 2rem;
+    }
+
+    header.masthead .masthead-heading {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
+    }
+}
+
+
+.page-section {
+    padding: 1rem 0;
+}
+
+.page-section h2.section-heading,
+.page-section .section-heading.h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.page-section h3.section-subheading,
+.page-section .section-subheading.h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    /* section {
+    padding: 1rem 0;
+  } */
+
+    .team-member {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .team-member img {
+        width: 14rem;
+        height: 14rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member h4,
+    .team-member .h4 {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .img-brand {
+        height: 2.75rem;
+    }
+
+    .text-muted {
+        font-size: 15px;
+        color: #6c757d !important;
+        text-align: center;
+    }
+
+
+}
