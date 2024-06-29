@@ -1,12 +1,10 @@
 <script>
-
 import InfoCards from "../components/articles/InfoCards.vue"
 export default {
   name: "infoCards",
   components: {
     InfoCards,
   },
-
 };
 </script>
 
@@ -63,8 +61,6 @@ export default {
         </div>
       </div>
     </section>
-
-
     <InfoCards />
     <section class="page-section bg-light" id="team">
       <div class="container">
@@ -88,7 +84,7 @@ export default {
           </div>
           <div class="col-lg-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="./../../public/images/1.jpg" alt="..." />
+              <img class="mx-auto rounded-circle" src="./../../public/images/2.jpg" alt="..." />
               <h4>Diana Petersen</h4>
               <h5 class="text-muted mt-2">Juriste à l'USCV</h5>
               <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i
@@ -101,7 +97,7 @@ export default {
           </div>
           <div class="col-lg-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src=" ./../../public/images/1.jpg" alt="..." />
+              <img class="mx-auto rounded-circle" src=" ./../../public/images/3.jpg" alt="..." />
               <h4>Larry Parker</h4>
               <h5 class="text-muted mt-2">Avocat en droit pénal des affaires</h5>
               <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i
@@ -146,19 +142,20 @@ export default {
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="" alt="..."
-                aria-label="Microsoft Logo" /></a>
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/microsoft.svg"
+                alt="..." aria-label="Microsoft Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="" alt="..."
-                aria-label="Google Logo" /></a>
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/google.svg"
+                alt="..." aria-label="Google Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="" alt="..."
-                aria-label="Facebook Logo" /></a>
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/facebook.svg"
+                alt="..." aria-label="Facebook Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="" alt="..." aria-label="IBM Logo" /></a>
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/ibm.svg" alt="..."
+                aria-label="IBM Logo" /></a>
           </div>
         </div>
       </div>

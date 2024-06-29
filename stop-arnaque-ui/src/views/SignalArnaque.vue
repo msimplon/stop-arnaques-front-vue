@@ -14,7 +14,7 @@ export default {
             inputs: {
                 subject: null,
                 email: null,
-                incidentNumber: null,
+                incidentReference: null,
                 attachement: null,
                 details: null,
                 disputeId: 0,
@@ -27,7 +27,7 @@ export default {
                 subject: { required, maxLength: maxLength(100) },
                 email: { required, maxLength: maxLength(100) },
                 details: { required, maxLenght: maxLength(1000) },
-                incidentNumber: { required, maxLength: maxLength(1000) },
+                incidentReference: { required, maxLength: maxLength(1000) },
                 attachement: {
                     maxValue: (file) => {
                         return file === null || file.size < 512000
@@ -47,7 +47,7 @@ export default {
                 }
                 formData.append("subject", this.inputs.subject);
                 formData.append("email", this.inputs.email);
-                formData.append("incidentNumber", this.inputs.incidentNumber);
+                formData.append("incidentReference", this.inputs.incidentReference);
                 formData.append("details", this.inputs.details);
                 formData.append("disputeId", this.inputs.disputeId);
 
@@ -92,14 +92,14 @@ export default {
             <form novalidate @submit.prevent="submit">
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <label for="incidentNumber" class="form-label required">Numéro d'incident
+                        <label for="incidentReference" class="form-label required">Référence de l'incident
                         </label>
-                        <input v-model.trim="inputs.incidentNumber" id="incidentNumber" name="incidentNumber"
-                            class="form-control" :class="{ 'is-invalid': validator.inputs.incidentNumber.$error }" />
-                        <div class="form-text text-danger" v-if="validator.inputs.incidentNumber.$error">
+                        <input v-model.trim="inputs.incidentReference" id="incidentReference" name="incidentReference"
+                            class="form-control" :class="{ 'is-invalid': validator.inputs.incidentReference.$error }" />
+                        <div class="form-text text-danger" v-if="validator.inputs.incidentReference.$error">
                             Veuillez renseigner ce champs.
                         </div>
-                        <div class="form-text mb-3" v-else>numéro d'incident</div>
+                        <div class="form-text mb-3" v-else>Référence de l'incident</div>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="incidentNumber" class="form-label required">E-mail
