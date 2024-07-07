@@ -53,7 +53,7 @@ const logout = async () => {
                 </li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li v-if="isLoggedIn" class=" nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                 <i class="bi bi-bookmarks-fill"></i>
                 Actualité
@@ -65,14 +65,14 @@ const logout = async () => {
                     Site de la DGCCRF
                   </RouterLink>
                 </li>
-                <li v-if="isLoggedIn && isAdmin">
+                <li v-if="isLoggedIn">
                   <RouterLink :to="{ name: 'actualité' }" class="dropdown-item">
                     <i class="bi bi-house-door-fill"></i> A la une
                   </RouterLink>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
+            <li v-if="isLoggedIn" class=" nav-item">
               <RouterLink :to="{ name: 'contact' }" class="nav-link">
                 <i class="bi bi-envelope-at-fill"></i>
                 Contact
@@ -90,7 +90,7 @@ const logout = async () => {
                 Inscription
               </RouterLink>
             </li>
-            <li class="nav-item">
+            <li v-if="isLoggedIn" class="nav-item">
               <RouterLink :to="{ name: 'article-signal-arnaque' }" class="nav-link">
                 <i class="bi bi-bell-fill"></i> Signaler
               </RouterLink>

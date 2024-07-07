@@ -1,9 +1,8 @@
 <script>
 import { useVuelidate } from "@vuelidate/core";
-import { required, maxLength, minValue } from "@vuelidate/validators";
+import { required, maxLength } from "@vuelidate/validators";
 
 export default {
-
   setup() {
     return {
       validator: useVuelidate({ $autoDirty: true }),
@@ -27,17 +26,17 @@ export default {
     };
   },
 
-
   validations() {
     return {
       inputs: {
         title: {
-          required, maxLength: maxLength(100), uniqueTitle: (value) => ({
+          required,
+          maxLength: maxLength(100),
+          uniqueTitle: (value) => ({
             isValid: this.isTitleUnique(value),
             message: "Ce titre existe déjà. Veuillez en choisir un autre.",
           }),
         },
-
         subTitle: { required, maxLength: maxLength(100) },
         editor: { required, maxLenght: maxLength(100) },
         introduction: { required, maxLength: maxLength(700) },
@@ -45,19 +44,11 @@ export default {
         imageUrl: {
           required,
           maxValue: (file) => {
-            return file === null || file.size < 512000
+            return file === null || file.size < 512000;
           },
-
         },
-        categoryId: { required, minValue: minValue(1) },
-        date: {
-          required,
-          minValue: (value) => {
-            const selectedDate = new Date(value);
-            const currentDate = new Date();
-            return selectedDate >= currentDate;
-          },
-        }
+        categoryId: { required },
+        date: { required }, // Supprimer la validation minValue ici
       },
     };
   },
@@ -93,13 +84,12 @@ export default {
     },
 
     async submit() {
-      const formData = new FormData()
-      const valid = await this.validator.$validate()
-      console.log(this.validator.inputs.imageUrl.$errors)
+      const formData = new FormData();
+      const valid = await this.validator.$validate();
       if (valid) {
-        const [year, month, day] = this.inputs.date.toString().split("-")
+        const [year, month, day] = this.inputs.date.toString().split("-");
         if (this.inputs.imageUrl != null) {
-          formData.append("imageUrl", this.inputs.imageUrl)
+          formData.append("imageUrl", this.inputs.imageUrl);
         }
         formData.append("title", this.inputs.title);
         if (!this.validator.inputs.title.uniqueTitle.isValid) {
@@ -112,31 +102,40 @@ export default {
         formData.append("introduction", this.inputs.introduction);
         formData.append("date", `${day}/${month}/${year}`);
         formData.append("categoryId", this.inputs.categoryId);
-        const resp = await this.$http.post("/articles", formData);
 
-        if (resp.status === 201) {
-          Object.assign(this.inputs, this.$options.data().inputs);
-          this.$toast.success("toast-global", "L'article a été créé !");
-          this.$router.push({ name: "articles-home" });
-        } else {
-          this.$toast.error("toast-global", "problème de validation");
+        try {
+          const resp = await this.$http.post("/articles", formData);
+          if (resp.status === 201) {
+            Object.assign(this.inputs, this.$options.data().inputs);
+            this.$toast.success("toast-global", "L'article a été créé !");
+            this.$router.push({ name: "articles-home" });
+          } else {
+            this.$toast.error("toast-global", "Problème de validation");
+          }
+        } catch (error) {
+          console.error("Erreur lors de l'envoi du formulaire :", error);
+          this.$toast.error("toast-global", "Erreur lors de la création de l'article.");
         }
       }
-
     },
 
     handleFileUpload(event) {
-      this.inputs.imageUrl = event.target.files[0]
+      this.inputs.imageUrl = event.target.files[0];
     },
+
     async initcategory() {
-      const resp = await this.$http.get("/categories");
-      this.categoryId = resp.body;
+      try {
+        const resp = await this.$http.get("/categories");
+        this.categoryId = resp.body;
+      } catch (error) {
+        console.error("Erreur lors de la récupération des catégories :", error);
+      }
     },
   },
+
   beforeMount() {
     this.initcategory();
   },
-
 };
 </script>
 
@@ -153,9 +152,8 @@ export default {
             <input v-model.trim="inputs.title" id="title" name="title" type="text" maxlength="100" class="form-control"
               :class="{ 'is-invalid': validator.inputs.title.$error }" />
             <div class="form-text text-danger" v-if="validator.inputs.title.$error">
-              Veuillez renseigner ce champs.
+              Veuillez renseigner ce champ.
             </div>
-
             <div class="form-text mb-3" v-else>{{ $t("formElse.elseTitle") }}</div>
           </div>
 
@@ -164,9 +162,8 @@ export default {
             <input v-model.trim="inputs.subTitle" id="subTitle" name="subTitle" type="text" maxlength="100"
               class="form-control" :class="{ 'is-invalid': validator.inputs.subTitle.$error }" />
             <div class="form-text text-danger" v-if="validator.inputs.subTitle.$error">
-              Veuillez renseigner ce champs.
+              Veuillez renseigner ce champ.
             </div>
-
             <div class="form-text mb-3" v-else>{{ $t("formElse.elseSubtitle") }}</div>
           </div>
 
@@ -175,9 +172,8 @@ export default {
             <input v-model.trim="inputs.editor" id="editor" name="editor" type="text" maxlength="100"
               class="form-control" :class="{ 'is-invalid': validator.inputs.editor.$error }" />
             <div class="form-text text-danger" v-if="validator.inputs.editor.$error">
-              Veuillez renseigner ce champs.
+              Veuillez renseigner ce champ.
             </div>
-
             <div class="form-text mb-3" v-else>{{ $t("formElse.elseEditor") }}.</div>
           </div>
         </div>
@@ -187,19 +183,17 @@ export default {
           <textarea v-model.trim="inputs.introduction" id="introduction" name="introduction" maxlength="1000" rows="12"
             class="form-control" :class="{ 'is-invalid': validator.inputs.introduction.$error }"></textarea>
           <div class="form-text text-danger" v-if="validator.inputs.introduction.$error">
-            Veuillez renseigner ce champs.
+            Veuillez renseigner ce champ.
           </div>
           <div class="form-text mb-3" v-else>{{ $t("formElse.elseIntroduction") }}.</div>
         </div>
 
         <div class="col-12">
-          <label for="description" class="form-label required">{{
-          $t("categoryFormLabels.formDescription")
-        }}</label>
+          <label for="description" class="form-label required">{{ $t("categoryFormLabels.formDescription") }}</label>
           <textarea v-model.trim="inputs.description" id="description" name="description" rows="12" class="form-control"
             :class="{ 'is-invalid': validator.inputs.description.$error }"></textarea>
           <div class="form-text text-danger" v-if="validator.inputs.description.$error">
-            Veuillez renseigner ce champs.
+            Veuillez renseigner ce champ.
           </div>
           <div class="form-text mb-3" v-else>{{ $t("formElse.elseDescription") }}</div>
         </div>
@@ -220,7 +214,6 @@ export default {
                 <div class="form-text text-danger" v-if="validator.inputs.imageUrl.maxValue.$invalid">
                   L'image que vous téléchargez ne doit pas dépasser 2 Mo.
                 </div>
-
                 <div class="form-text mb-3" v-else>{{ $t("formElse.elseImage") }}</div>
               </div>
             </div>
@@ -229,8 +222,8 @@ export default {
 
           <div class="col-md-4 mb-3">
             <label for="name" class="form-label required">Date</label>
-            <input v-model.trim="inputs.date" id="date" name="date" :min="getFormattedDate()" type="date"
-              class="form-control"
+            <input v-model.trim="inputs.date" id="date" name="date" :min="getFormattedDate()" :max="getFormattedDate()"
+              type="date" class="form-control"
               :class="{ 'is-invalid': validator.inputs.date.$error || (validator.inputs.date === false && inputs.date) }" />
 
             <div class="form-text text-danger" v-if="validator.inputs.date.$error && !inputs.date">

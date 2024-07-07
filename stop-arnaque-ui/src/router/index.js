@@ -27,7 +27,11 @@ const router = createRouter({
     {
       path: '/recours/articles',
       name: 'dgccrf',
-      beforeEnter() { location.href = 'https://www.economie.gouv.fr/dgccrf' }
+      beforeEnter() { location.href = 'https://www.economie.gouv.fr/dgccrf' },
+      meta: {
+        requiresAuth: true,
+        permission: 'admin' || 'USER'
+      }
 
     },
     {
@@ -36,7 +40,7 @@ const router = createRouter({
       component: () => import('../views/Actualité.vue'),
       meta: {
         requiresAuth: true,
-        permission: 'admin'
+
       }
 
     },
@@ -65,13 +69,22 @@ const router = createRouter({
     {
       path: '/article/signal',
       name: 'article-signal-arnaque',
-      component: () => import('../views/SignalArnaque.vue')
+      component: () => import('../views/SignalArnaque.vue'),
+      meta: {
+        requiresAuth: true,
+
+      }
     },
 
     {
       path: '/contact',
       name: 'contact',
-      component: () => import('../views/Contact.vue')
+      component: () => import('../views/Contact.vue'),
+      meta: {
+        requiresAuth: true,
+
+
+      }
     },
     {
       path: '/signIn',

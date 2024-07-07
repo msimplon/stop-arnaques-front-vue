@@ -14,6 +14,7 @@ export default {
         primaryRecipient: null,
         subject: null,
         body: null,
+        sender: 'info@hotmail.fr',
       },
     };
   },
@@ -23,6 +24,7 @@ export default {
         primaryRecipient: { required, email },
         subject: { required, maxLength: maxLength(100) },
         body: { required, maxLength: maxLength(1000) },
+        sender: { required, maxLength: maxLength(100) }
       },
     };
   },
@@ -90,6 +92,7 @@ export default {
                 </span> -->
               </div>
 
+
               <div class="col-md-6 form-group mt-3 mt-md-0">
                 <input for="subject" type="text" class="form-control"
                   :class="{ 'is-invalid': validator.inputs.subject.$error }" name="subject" id="subject"
@@ -99,6 +102,12 @@ export default {
                 {{ validator.inputs.subject.$errors[0].$message }}
               </span>
             </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input for="sender" type="email" class="form-control"
+                :class="{ 'is-invalid': validator.inputs.sender.$error }" id="sender" name="sender"
+                v-model="inputs.sender" placeholder="sender" required readonly style="opacity: 0;" />
+            </div>
+
 
             <div class="form-group mt-3">
               <textarea for="body" class="form-control" :class="{ 'is-invalid': validator.inputs.body.$error }"
@@ -122,3 +131,9 @@ export default {
     </div>
   </section>
 </template>
+<style>
+.form-group {
+  margin-bottom: 16px;
+  /* Ajustez la valeur selon vos besoins */
+}
+</style>
