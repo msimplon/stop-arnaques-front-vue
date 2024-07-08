@@ -139,26 +139,26 @@ export default {
 
     <div class="b-example-divider mb-0"></div>
     <div class="py-5">
-      <!-- <div class="container">
+      <div class="container">
         <div class="row align-items-center">
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/microsoft.svg"
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/microsoft.svg"
                 alt="..." aria-label="Microsoft Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/google.svg"
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src=" ./../../public/images/google.svg"
                 alt="..." aria-label="Google Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/facebook.svg"
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src=" ./../../public/images/facebook.svg"
                 alt="..." aria-label="Facebook Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/ibm.svg" alt="..."
-                aria-label="IBM Logo" /></a>
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src=" ./../../public/images/facebook.svg"
+                alt="..." aria-label="IBM Logo" /></a>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
   </main>
 </template>
