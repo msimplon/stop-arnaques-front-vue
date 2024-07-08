@@ -146,15 +146,15 @@ export default {
                 alt="..." aria-label="Microsoft Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/google.svg"
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/google.svg"
                 alt="..." aria-label="Google Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/facebook.svg"
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/facebook.svg"
                 alt="..." aria-label="Facebook Logo" /></a>
           </div>
           <div class="col-md-3 col-sm-6 my-3">
-            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="../../../public/images/ibm.svg" alt="..."
+            <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="./../../public/images/ibm.svg" alt="..."
                 aria-label="IBM Logo" /></a>
           </div>
         </div>
