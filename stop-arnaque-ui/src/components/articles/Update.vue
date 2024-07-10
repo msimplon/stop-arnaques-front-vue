@@ -77,6 +77,7 @@ export default {
     async submit() {
       const formData = new FormData()
       const valid = await this.validator.$validate()
+      console.log("valid", this.validator.$errors);
       if (valid) {
         const [year, month, day] = this.inputs.date.toString().split("-")
         if (this.inputs.imageUrl != null) {
@@ -127,7 +128,7 @@ export default {
       <h1 class="row justify-content-center mt-2 mb-3">
         Modifier un article
       </h1>
-      <form novalidate @submit.prevent="submit">
+      <form novalidate @submit.prevent="submit()">
         <div class="row">
           <div class="col-md-4 mb-3">
             <label for="name" class="form-label required">Titre</label>
@@ -204,16 +205,18 @@ export default {
             <div class="form-text mb-3" v-else>Date de publication présente ou future.</div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="categoryId" class="form-label required">Catégorie</label>
+            <label for="categoryId" class="form-label required">{{ $t("formCategory.select") }}</label>
             <select v-model.number="inputs.categoryId" id="categoryId" name="categoryId" class="form-select"
               :class="{ 'is-invalid': validator.inputs.categoryId.$error }">
-              <option selected disabled value="0">Choisir une catégorie</option>
+              <option selected disabled value="0">{{ $t("formCategory.fieldSelect") }}</option>
               <LabelValues :items="categoryId" />
             </select>
+
             <div class="form-text text-danger" v-if="validator.inputs.categoryId.$error">
               Veuillez saisir une catégorie
             </div>
-            <div class="form-text mb-3" v-else>Actualité ou conseil.</div>
+
+            <div class="form-text mb-3" v-else>{{ $t("formElse.elseCategory") }}</div>
           </div>
         </div>
         <div class="text-center d-flex justify-content-end">
